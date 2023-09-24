@@ -1,0 +1,15 @@
+#! /bin/sh.
+
+
+
+## starting a new console in a new terminal
+ros2 run rqt_console rqt_console
+
+## starting turtlesim in a new terminal
+ros2 run turtlesim turtlesim_node
+
+## producing messages on rqt_node 
+ros2 topic pub -r 1 /turtle1/cmd_vel geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}"
+
+## setting default logger level
+ros2 run turtlesim turtlesim_node --ros-args --log-level WARN
